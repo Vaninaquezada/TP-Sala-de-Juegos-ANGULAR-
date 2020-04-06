@@ -4,17 +4,24 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --output-path angularapp --aot --prod"
   },
   "private": true,
+  "engines": {
+    "node": "v12.16.1",
+    "npm": "6.13.4"
+  },
   "dependencies": {
     "@agm/core": "^1.0.0-beta.1",
     "@angular/animations": "^9.1.0",
     "@angular/cdk": "^9.2.0",
+    "@angular/cli": "^9.1.0",
+    "@angular/compiler-cli": "^9.1.0",
     "@angular/common": "^9.1.0",
     "@angular/compiler": "^9.1.0",
     "@angular/core": "^9.1.0",
@@ -33,6 +40,7 @@
     "rxjs": "^6.5.5",
     "rxjs-compat": "^6.5.5",
     "tslib": "^1.9.0",
+    "typescript": "^3.2.4",
     "zone.js": "^0.10.3"
   },
   "devDependencies": {
