@@ -51,8 +51,7 @@ text-align: left;
 
 color: rgb(250, 250, 250);
 }
-p{
-}
+
 .juegos{
     grid-column:  1/span 2;
     grid-row: 1/span 3;
