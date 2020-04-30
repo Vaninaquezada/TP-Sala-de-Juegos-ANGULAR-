@@ -24,7 +24,11 @@ img {
     height: 50%;
 }
 
+.tarjetas{
+ margin-left: 8%;
 
+
+}
 .button{
     margin-left: 1px;
     display: inline-block;

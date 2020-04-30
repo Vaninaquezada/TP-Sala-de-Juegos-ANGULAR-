@@ -1,78 +1,144 @@
-<app-cabecera>  </app-cabecera>
+<app-cabecera> </app-cabecera>
 
 
 
- 
-<div class="container" >
-   
-    <ul class="list-group">
-        <li class="list-group-item list-group-item ">
-           
-                <div class="media-body">
-                    <div class="hero-text mt-0">
-                        <h4 >Menú Principal</h4>
-                    </div>
-                 </div>
-               
-             
-          </li>
-        <li class="list-group-item list-group-item-light">
-          <a routerLink="/Juegos">
-            <div class="media">
-              <div class="media-left">
-                    <img src="./assets/imagenes/saladejuegos.png" class="media-object imagenDeMenu" >
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">Juegos</h4>
-                <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>
-              </div>
-             
-            </div> 
-          </a>
-        </li>
-        <li class="list-group-item list-group-item">
-            <a routerLink="/Listado">
-              <div class="media">
+
+<div class="container">
+
+
+
+        <div class="titulo">  
+           <h1>Menú</h1>
+        </div>
+
+          <div class="menu-container">
+
+
+              <a routerLink="/Juegos">
+                <div class="media juegos">
                   <div class="media-left">
-                      <img src="./assets/imagenes/listado.png" class="media-object imagenDeMenu" >
-                    </div>
-                <div class="media-body">
-                  <h4 class="media-heading">Listados de resultados</h4>
-                  <p>Los listados de los resultados con ordenamiento y busqueda</p>
+                    <img  class="imagen"  src="./assets/imagenes/saladejuegos.png" class="media-object imagenDeMenu">
+                  </div>
+                  <div class="media-body ">
+                  
+                    <h4 class="juegos">Juegos</h4>
+                    <p>Listado de Juegos</p>
+                  </div>
+
                 </div>
-                
-              </div> 
-            </a>
-          </li>
-        <li class="list-group-item list-group-item">
-          <a routerLink="/Juegos">
-            <div class="media">
-                <div class="media-left">
-                    <img src="./assets/imagenes/Configuracion.png" class="media-object imagenDeMenu" >
+              </a>
+              <a routerLink="/Listado">
+                <div class="media listados">
+                  <div class="media-left">
+                    <img  class="imagen"  src="./assets/imagenes/listado.png" class="media-object imagenDeMenu">
                   </div>
-              <div class="media-body">
-                <h4 class="media-heading">Configuraci&oacute;n</h4>
-                <p>Ajustes de la aplicacion y los métodos de autentificación</p>
-              </div>
-             
-            </div> 
-          </a>
-        </li>
-        <li class="list-group-item list-group-item">
-          <a routerLink="/Jugadores">
-            <div class="media">
-                <div class="media-left">
-                    <img src="./assets/imagenes/jugadores.png" class="media-object imagenDeMenu" >
+                  <div class="media-body">
+                    <h4 class="media-heading">Listados de resultados</h4>
+                    <p>Los listados de los resultados con ordenamiento y busqueda</p>
                   </div>
-              <div class="media-body">
-                <h4 class="media-heading">Jugadores</h4>
-                <p>Listado de jugadores</p>
-              </div>
-             
-            </div> 
-          </a>
-        </li>
-       
+
+                </div>
+              </a>
+              <a routerLink="/Juegos">
+                <div class="media configuracion">
+                  <div class="media-left">
+                    <img  class="imagen"  src="./assets/imagenes/Configuracion.png" class="media-object imagenDeMenu">
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Configuraci&oacute;n</h4>
+                    <p>Ajustes de la aplicacion y los métodos de autentificación</p>
+                  </div>
+
+                </div>
+              </a>
+              <a routerLink="/Jugadores">
+                <div class="media jugadores">
+                  <div class="media-left">
+                    <img class="imagen" src="./assets/imagenes/jugadores.png" class="media-object imagenDeMenu">
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Jugadores</h4>
+                    <p>Listado de jugadores</p>
+                  </div>
+
+                </div>
+              </a>
+            </div>
+
+          <!--
+
         
-      </ul>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item ">
+                  
+                        <div class="media-body">
+                            <div class="hero-text mt-0">
+                                <h4 >Menú Principal</h4>
+                            </div>
+                        </div>
+                    
+                        
+        
+            
+                  </li>
+                <li class="list-group-item list-group-item-light">
+                  <a routerLink="/Juegos">
+                    <div class="media">
+                      <div class="media-left">
+                            <img src="./assets/imagenes/saladejuegos.png" class="media-object imagenDeMenu" >
+                      </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">Juegos</h4>
+                        <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>
+                      </div>
+                    
+                    </div> 
+                  </a>
+                </li>
+                <li class="list-group-item list-group-item">
+                    <a routerLink="/Listado">
+                      <div class="media">
+                          <div class="media-left">
+                              <img src="./assets/imagenes/listado.png" class="media-object imagenDeMenu" >
+                            </div>
+                        <div class="media-body">
+                          <h4 class="media-heading">Listados de resultados</h4>
+                          <p>Los listados de los resultados con ordenamiento y busqueda</p>
+                        </div>
+                        
+                      </div> 
+                    </a>
+                  </li>
+                <li class="list-group-item list-group-item">
+                  <a routerLink="/Juegos">
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="./assets/imagenes/Configuracion.png" class="media-object imagenDeMenu" >
+                          </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">Configuraci&oacute;n</h4>
+                        <p>Ajustes de la aplicacion y los métodos de autentificación</p>
+                      </div>
+                    
+                    </div> 
+                  </a>
+                </li>
+                <li class="list-group-item list-group-item">
+                  <a routerLink="/Jugadores">
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="./assets/imagenes/jugadores.png" class="media-object imagenDeMenu" >
+                          </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">Jugadores</h4>
+                        <p>Listado de jugadores</p>
+                      </div>
+                    
+                    </div> 
+                  </a>
+                </li>
+              
+                
+              </ul>
+            -->
 </div>

@@ -1,5 +1,6 @@
 .imagenDeQuienSoy{
-    width: 100%;
+    width: 400px;
+    height: 250px;
    
     }
 body {
@@ -22,7 +23,7 @@ p {font-size: 16px;}
     color: #555555;
 }
 .bg-4 { 
-    background-color: #2f2f2f; /* Black Gray */
+    background-color: #7c5985; /* Black Gray */
     color: #fff;
 }
 .container-fluid {
@@ -40,4 +41,39 @@ p {font-size: 16px;}
 }
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
+}
+
+nav{
+
+    display: flex;
+    background-color: rgb(14, 58, 255);
+    color:  rgb(255, 255, 255);
+
+}
+
+ul li{
+    padding: 10px;
+}
+.active{
+    background-color: rgb(243, 243, 243);
+    border:solid;
+    border-radius: 25px;
+    border-color: rgb(50, 138, 253);
+    color: rgb(255, 255, 255);
+}
+a{
+
+    color: rgb(255, 255, 255);
+}
+.row{
+
+background-color: rgb(239, 220, 245);
+padding: 30px;
+color: rgb(124, 67, 151);
+}
+
+#que{
+
+    margin-top: 60px;
+
 }

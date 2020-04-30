@@ -1,0 +1,27 @@
+nav{
+
+    display: flex;
+    background-color: rgb(14, 58, 255);
+    color:  rgb(255, 255, 255);
+
+}
+
+ul li{
+    padding: 10px;
+}
+.active{
+    background-color: rgb(243, 243, 243);
+    border:solid;
+    border-radius: 25px;
+    border-color: rgb(50, 138, 253);
+    color: rgb(255, 255, 255);
+}
+
+thead{
+    color: rgb(255, 255, 255);
+    background-color: rgb(153, 73, 177);
+}
+.container{
+
+    margin-top: 10px;
+}

@@ -33,3 +33,12 @@ cursor: pointer;
 background-color: #555;
 color: white;
 }
+nav ul li{
+
+    color: white;
+}
+
+nav {
+    background-color: rgb(14, 58, 255);
+        color: white;
+}

@@ -1,0 +1,17 @@
+
+
+
+thead{
+    color: rgb(255, 255, 255);
+    background-color: rgb(153, 73, 177);
+}
+.container{
+
+    margin-top: 10px;
+}
+
+tbody tr td{
+    border: solid;
+    border-color: rgb(197, 136, 212);
+background-color: rgb(252, 239, 255);
+}
