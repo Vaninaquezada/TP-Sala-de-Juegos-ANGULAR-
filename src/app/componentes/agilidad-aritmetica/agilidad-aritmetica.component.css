@@ -1,0 +1,25 @@
+.container {
+    width: auto;
+    padding: 16px;
+    font-family: 'Kreon', serif;
+
+}
+
+form {
+    border: 10px solid #5c4474;
+    padding: 30px;
+    background:rgb(255, 245, 255);
+    border-radius: 25px;
+    width: 75%;
+    margin: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  button{
+
+    margin: 10px;
+  }

@@ -2,7 +2,14 @@
 <!--app-menu></app-menu-->
 <!-- index.html -->
 
-<!--  
+<!-- 
+  <div class="container">
+    <div style="text-align:center">
+      <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@700&display=swap" rel="stylesheet">
+      <h1>
+        Velocidad y agilidad aritmética
+      </h1>
+     </div>
 <form name="juego">
 <ul>
    <li>
@@ -18,7 +25,7 @@
     
   </li>
   <li>
-    Respuesta: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
+    Respuesta: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" required/>
      
    </li>
   <li>
@@ -36,12 +43,12 @@
 </ul>
 
 </form>
-
+</div>
 -->
 
 
 
-
+<div class="container">
 <form name="juego">
   <ul>
      <li>
@@ -61,7 +68,7 @@
        
      </li>
     <li>
-      <h2  ><button  class="btn btn-success btn-lg"> </button></h2>
+     
     </li>
     <li>
       <h2 ><button    class="btn btn-info btn-lg">Nuevo</button></h2>
@@ -69,13 +76,12 @@
     <li>
       <h2><p><i class="fa fa-spinner fa-spin"></i>Esperando numero...</p></h2>
   
-      <h3 >usted adivino el número</h3>
-      <h3 >usted aún no gano </h3>
+     
     </li>
   </ul>
   
   </form>
-  
+</div>
 
 
 <!--

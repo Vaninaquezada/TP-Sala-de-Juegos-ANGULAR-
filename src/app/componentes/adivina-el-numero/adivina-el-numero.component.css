@@ -1,8 +1,11 @@
 
 form {
-    border: 10px solid #f1f1f1;
+    border: 10px solid #5c4474;
     padding: 10px;
-    background:gray;
+    background:rgb(255, 245, 255);
+    border-radius: 25px;
+    width: 75%;
+    margin: auto;
 }
 
 input[type=text], input[type=password] {
@@ -22,6 +25,8 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
+    border-radius: 25px;
+
 }
 
 button:hover {
@@ -49,13 +54,20 @@ img.avatar {
 }
 
 .container {
+    width: auto;
     padding: 16px;
+    font-family: 'Kreon', serif;
+
 }
 
 span.psw {
     float: right;
     padding-top: 16px;
 }
+
+
+
+
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
