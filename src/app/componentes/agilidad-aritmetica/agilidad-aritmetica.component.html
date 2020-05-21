@@ -2,7 +2,7 @@
 <!--app-menu></app-menu-->
 <!-- index.html -->
 
-<!-- 
+
   <div class="container">
     <div style="text-align:center">
       <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@700&display=swap" rel="stylesheet">
@@ -13,19 +13,19 @@
 <form name="juego">
 <ul>
    <li>
-   Primer número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-  
+   Primer número: <input [(ngModel)]="nuevoJuego.numeroUno" placeholder="" name="nuevoJuego.numeroUno" type="text" class="form-control" style="width:50%" readonly/>
+
   </li>
   <li>
-   Operador: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-    
+   Operador: <input [(ngModel)]="nuevoJuego.operador" placeholder="" name="operador" type="text" class="form-control" style="width:50%" readonly/>
+
   </li>
   <li>
-   Segundo número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-    
+   Segundo número: <input [(ngModel)]="nuevoJuego.numeroDos" placeholder="" name="numeroDos" type="text" class="form-control" style="width:50%" readonly/>
+
   </li>
   <li>
-    Respuesta: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" required/>
+    Respuesta: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="Ingrese Numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" required/>
      
    </li>
   <li>
@@ -35,19 +35,18 @@
     <h2 [hidden]="!ocultarVerificar"><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo</button></h2>
   </li>
   <li>
-    <h2><p><i class="fa fa-spinner fa-spin"></i>Esperando numero...</p></h2>
+   
 
-    <h3 [hidden]="!nuevoJuego.gano">usted adivino el número</h3>
-    <h3 [hidden]="nuevoJuego.gano">usted aún no gano </h3>
+    <h3 *ngIf="nuevoJuego.gano">Ganaste!! Sos rapido para calcular</h3>
+    <h3 *ngIf="!nuevoJuego.gano && jugando" >Perdiste!! La respuesta era {{nuevoJuego.resultado}} </h3>
   </li>
 </ul>
 
 </form>
 </div>
--->
 
 
-
+<!-- 
 <div class="container">
 <form name="juego">
   <ul>
@@ -83,6 +82,7 @@
   </form>
 </div>
 
+-->
 
 <!--
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { AuthService } from '../../servicios/auth.service';
+import { UserI } from '../../interfaces/user';
 
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
@@ -21,6 +23,7 @@ export class LoginComponent implements OnInit {
   clase="progress-bar progress-bar-info progress-bar-striped ";
 
   constructor(
+    private authService: AuthService,
     private route: ActivatedRoute,
     private router: Router) {
       this.progreso=0;
@@ -77,5 +80,12 @@ export class LoginComponent implements OnInit {
     });
     //this.logeando=true;
   }
+
+  onLogin(form): void {
+    this.authService.login(form.value).subscribe(res => {
+      this.router.navigateByUrl('/auth');
+    });
+  }
+
 
 }

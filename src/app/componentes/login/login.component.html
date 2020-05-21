@@ -23,19 +23,19 @@
 </div-->
  <div class="container" >
   <div class="jumbotron" style="padding:20px;">
-    <form action="return true;">
+    <form action="return true;"  #frmLogin ="ngForm"  (ngSubmit)="onLogin(frmLogin)"  >
       <div class="imgcontainer">
         <img src="./assets/imagenes/login.jpg" alt="Avatar" class="avatar" max-width="104" >
       </div>
 
       <div class="container">
         <label><b>Usuario</b></label>
-        <input type="text" placeholder="Usuario"  [(ngModel)]="usuario"  name="uname" required>
+        <input type="text" placeholder="Usuario"  [(ngModel)]="usuario"  name="uname" ngModel required>
 
         <label><b>Clave</b></label>
-        <input type="password" placeholder="Clave"  [(ngModel)]="clave" name="psw" required>
+        <input type="password" placeholder="Clave"  [(ngModel)]="clave" name="psw" ngModel required>
             
-        <button *ngIf="logeando"  (click)="MoverBarraDeProgreso()" >Ingresar</button>
+        <button *ngIf="logeando" type = "submit" (click)="MoverBarraDeProgreso()" >Ingresar</button>
        
         <div *ngIf="!logeando" class="progress">
             <div class="progress-bar   active" [class]="clase" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" [style.width]="ProgresoDeAncho" >

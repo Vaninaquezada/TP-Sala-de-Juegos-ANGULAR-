@@ -1,0 +1,37 @@
+.container {
+    width: auto;
+    padding: 16px;
+    font-family: 'Kreon', serif;
+
+}
+
+form {
+    border: 10px solid #5c4474;
+    padding: 30px;
+    background:rgb(255, 245, 255);
+    border-radius: 25px;
+    width: 75%;
+    margin: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li{
+    list-style-type: none;
+  }
+  button{
+
+    margin: 10px;
+  }
+
+  #palabra{
+    width: 150px;
+    height: 50px;
+    font-family: 'Chewy', cursive;
+    font-size: 40px;
+    font-weight: bolder;
+
+  }

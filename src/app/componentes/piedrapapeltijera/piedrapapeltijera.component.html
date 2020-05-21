@@ -1,0 +1,44 @@
+<div class="container" style="text-align:center">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+   
+    <h1>Piedra Papel Tijera</h1>
+    <div class="juegoContainer">
+       
+       
+        <div class="seleccion" *ngIf="visualizarBoton">
+           
+            <h2 class="winner">{{juego.mensaje}}</h2>
+            <h3>Jugador</h3>
+            <div class="seleccionJugador seleccionJ" > 
+                 
+                 <img class="img-thumbnail" src="./assets/imagenes/{{juego.seleccionJugador}}.png" alt="Avatar" ><br>
+                 <h3>{{juego.seleccionJugador}}</h3> 
+            </div>
+            <h3>Vs</h3> 
+            <h3>Computadora</h3> 
+            <div class="seleccionComputadora seleccionJ">
+               
+                <img class="img-thumbnail" src="./assets/imagenes/{{juego.seleccionCompu}}.png" alt="Avatar" >
+                <h3>{{juego.seleccionCompu}}</h3> 
+            </div>
+            <button (click) = "ClickIntro()"> Jugar</button>
+        </div>
+
+        <div class="intro"  *ngIf="!jugando" >
+            <h1> Inicia un nuevo juego de <br>Piedra Papel Tijera</h1>
+            <button (click) = "ClickIntro()"> Jugar de nuevo</button>
+        </div>
+
+        <div class="match fadeOut" *ngIf="jugando && !visualizarBoton">
+            
+            <h2 class="winner">Elige tu jugada</h2>
+            <div class="options">
+                <button class="rock" (click)="Verificar('piedra')">Piedra</button>
+                <button class="paper" (click)="Verificar('papel')">Papel</button>
+                <button class="scissors" (click)="Verificar('tijera')">Tijera</button>
+            </div>
+        </div>
+    </div>
+</div>

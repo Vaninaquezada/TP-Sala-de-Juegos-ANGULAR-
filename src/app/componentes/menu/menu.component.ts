@@ -22,11 +22,20 @@ export class MenuComponent implements OnInit {
       case 'Agilidad':
           this.router.navigate(['/Juegos/Agilidad']);
         break;
-      case 'AdivinaMasListado':
-          this.router.navigate(['/Juegos/AdivinaMasListado']);
+        case 'Tateti':
+          this.router.navigate(['/Juegos/Tateti']);
         break;
-      case 'AgilidadaMasListado':
-          this.router.navigate(['/Juegos/AgilidadaMasListado']);
+      case 'Mijuego':
+          this.router.navigate(['/Juegos/Mijuego']);
+        break;
+      case 'Piedrapapeltijera':
+          this.router.navigate(['/Juegos/Piedrapapeltijera']);
+        break;
+      case 'Anagrama':
+          this.router.navigate(['/Juegos/Anagrama']);
+        break;
+        case 'Login':
+          this.router.navigate(['/Login']);
         break;
     }
   }
