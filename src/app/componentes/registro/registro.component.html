@@ -11,19 +11,15 @@
     <button  class="btn btn-danger btn-md cancelbtn"  routerLink="/Principal" style="width:auto;">No acepto</button>
     <div id="id01" class="input-group mb-3 modal">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-      <form class="modal-content animate" #frmRegister="ngForm" (ngSubmit)="onRegister(frmRegister)" >
+      <form class="modal-content animate"  [formGroup]="registerForm" (ngSubmit)="onRegister()" >
         <div class="container form-group">
-          <label><b>Nombre</b></label>
-          <input class="form-control" type="nombre" placeholder="Ingresa tu numbre" name="nombre" ngModel required>
-
+          {{mensajeError}}<br>
           <label><b>Email</b></label>
-          <input class="form-control" type="email" placeholder="Ingresa tu correo" name="email" ngModel required #mail>
-    
+          <input class="form-control" type="email" placeholder="Ingresa tu correo" name="email"  required formControlName="email">
+         
           <label><b>Clave</b></label>
-          <input type="password" class="form-control"  placeholder="Ingresa una clave" name="psw"  ngModel required #clave>
+          <input type="password" class="form-control"  placeholder="Ingresa una clave de 6 digitos" name="password"   required formControlName="password">
     
-          <label><b>Repita la clave</b></label>
-          <input type="password"  class="form-control"  placeholder="Ingresa nuevamente la clave" name="psw-repeat" ngModel required>
           <input type="checkbox" checked="checked">Recordar mis datos
           <p>Creando la cuenta aceptando los <a  onclick="document.getElementById('id01').style.display='none'"  >Terminos y condiciones</a>.</p>
     

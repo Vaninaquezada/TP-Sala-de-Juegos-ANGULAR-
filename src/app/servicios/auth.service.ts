@@ -1,59 +1,95 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { UserI } from '../interfaces/user';
+import { User } from '../interfaces/user';
 import { JwtResponseI } from '../interfaces/jwt-response';
 import { tap } from 'rxjs/operators';
 import { Observable, BehaviorSubject } from 'rxjs';
-
+import { AngularFireAuth } from '@angular/fire/auth';
+import { first } from 'rxjs/operators';
+import { auth } from 'firebase/app';
+import { switchMap } from 'rxjs/operators';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+} from '@angular/fire/firestore';
 
 @Injectable()
 export class AuthService {
-  AUTH_SERVER: string = 'http://localhost:3000';
-  authSubject = new BehaviorSubject(false);
-  private token: string;
-  constructor(private httpClient: HttpClient) { }
+  public user$: Observable<User>;
 
-  register(user: UserI): Observable<JwtResponseI> {
-    return this.httpClient.post<JwtResponseI>(`${this.AUTH_SERVER}/register`,
-      user).pipe(tap(
-        (res: JwtResponseI) => {
-          if (res) {
-            // guardar token
-            this.saveToken(res.dataUser.accessToken, res.dataUser.expiresIn);
-          }
-        })
-      );
-  }
+  constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) {
 
-  login(user: UserI): Observable<JwtResponseI> {
-    return this.httpClient.post<JwtResponseI>(`${this.AUTH_SERVER}/login`,
-      user).pipe(tap(
-        (res: JwtResponseI) => {
-          if (res) {
-            // guardar token
-            this.saveToken(res.dataUser.accessToken, res.dataUser.expiresIn);
-          }
-        })
-      );
-  }
+  } 
 
-  logout(): void {
-    this.token = '';
-    localStorage.removeItem("ACCESS_TOKEN");
-    localStorage.removeItem("EXPIRES_IN");
-  }
 
-  private saveToken(token: string, expiresIn: string): void {
-    localStorage.setItem("ACCESS_TOKEN", token);
-    localStorage.setItem("EXPIRES_IN", expiresIn);
-    this.token = token;
-  }
-
-  private getToken(): string {
-    if (!this.token) {
-      this.token = localStorage.getItem("ACCESS_TOKEN");
+  async resetPassword(email: string): Promise<void> {
+    try {
+      return this.afAuth.sendPasswordResetEmail(email);
+    } catch (error) {
+      console.log(error);
     }
-    return this.token;
   }
 
+  async sendVerificationEmail(): Promise<void> {
+    return (await this.afAuth.currentUser).sendEmailVerification();
+  }
+
+  async login(email: string, password: string) {
+    try {
+      //  const { user } = await this.afAuth.signInWithEmailAndPassword(
+      const result = await this.afAuth.signInWithEmailAndPassword(
+        email,
+        password
+      );
+      //   this.updateUserData(user);
+      return result;
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async register(email: string, password: string) {
+    try {
+      const user = await this.afAuth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
+      //  await this.sendVerificationEmail();
+      return user;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async logout(): Promise<void> {
+    try {
+      await this.afAuth.signOut();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  getCurrentUser() {
+    return this.afAuth.authState.pipe(first()).toPromise();
+  }
+
+  /* private updateUserData(user: User) {
+     const userRef: AngularFirestoreDocument<User> = this.afs.doc(
+       `users/${user.uid}`
+     );
+ 
+     const data: User = {
+       uid: user.uid,
+       email: user.email,
+       emailVerified: user.emailVerified,
+       displayName: user.displayName,
+       photoURL: user.photoURL,
+       role: 'ADMIN',
+     };
+ 
+     return userRef.set(data, { merge: true });
+   }*/
+  
 }
+

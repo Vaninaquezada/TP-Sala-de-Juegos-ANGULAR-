@@ -21,19 +21,20 @@
     </div>
   </div>
 </div-->
+<!---->
  <div class="container" >
   <div class="jumbotron" style="padding:20px;">
-    <form action="return true;"  #frmLogin ="ngForm"  (ngSubmit)="onLogin(frmLogin)"  >
+    <form action="return true;"  [formGroup]="loginForm" (ngSubmit)="onLogin()"  >
       <div class="imgcontainer">
         <img src="./assets/imagenes/login.jpg" alt="Avatar" class="avatar" max-width="104" >
       </div>
-
+      {{mensajeError}}
       <div class="container">
         <label><b>Usuario</b></label>
-        <input type="text" placeholder="Usuario"  [(ngModel)]="usuario"  name="uname" ngModel required>
+        <input type="text" placeholder="usuario@usuario.com"   name="uname"   required formControlName="email">
 
         <label><b>Clave</b></label>
-        <input type="password" placeholder="Clave"  [(ngModel)]="clave" name="psw" ngModel required>
+        <input type="password" placeholder="123456"  name="password"   required  formControlName="password">
             
         <button *ngIf="logeando" type = "submit" (click)="MoverBarraDeProgreso()" >Ingresar</button>
        
@@ -43,7 +44,8 @@
             </div>
         </div>
        
-        <input type="checkbox" checked="checked"> Recordar mis datos
+
+
       </div>
 
       <div class="container" style="background-color:rgb(251, 230, 255)">
@@ -53,5 +55,12 @@
       </div>
      
     </form>
+<!--
+    <select value="seleccione" okText="Seleccionar" [(ngModel)]="valor"  cancelText="Cancelar" (ngnChange)="onChange(valor)">
+      <option value="admin">admin</option>
+      <option value="fulanito">Fulanito</option>
+     
+      </select>
+-->
   </div>
 </div>

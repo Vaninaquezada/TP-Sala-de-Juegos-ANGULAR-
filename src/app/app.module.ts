@@ -58,7 +58,9 @@ import { PiedrapapeltijeraComponent } from './componentes/piedrapapeltijera/pied
 import { MijuegoComponent } from './componentes/mijuego/mijuego.component';
 import { AuthService } from './servicios/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { environment } from  '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -96,7 +98,8 @@ import { AngularFireModule } from '@angular/fire';
     RuteandoModule,
     HttpModule,
     HttpClientModule,
-    AngularFireModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     })

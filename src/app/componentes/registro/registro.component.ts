@@ -1,30 +1,51 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { AuthService } from '../../servicios/auth.service';
-import { UserI } from '../../interfaces/user';
+import { User } from '../../interfaces/user';
+import { FormGroup, FormControl } from '@angular/forms';
 //para poder hacer las validaciones
 //import { Validators, FormBuilder, FormControl, FormGroup} from '@angular/forms';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  styleUrls: ['./registro.component.css'],
+  providers:[AuthService]
 })
-export class RegistroComponent implements OnInit {
+export class RegistroComponent  {
+  mensajeError:string;
+  registerForm = new FormGroup({
+    email: new FormControl(''), 
+    password: new FormControl(''),
+  });
 
- /* constructor( private miConstructor:FormBuilder) { }
-  email=new FormControl('',[Validators.email]);
-  formRegistro:FormGroup=this.miConstructor.group({
-    usuario:this.email
-  });*/
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authSvc: AuthService, private router: Router) {}
 
-  ngOnInit() {
+
+  async onRegister() {
+    const { email, password } = this.registerForm.value;
+    try {
+      const user = await this.authSvc.register(email, password);
+      console.log(user);
+      if (user) {
+        this.router.navigate(['/Principal']);
+     //   this.checkUserIsVerified(user);
+      }else{
+        this.mensajeError = "Direccion de mail no valida";
+
+      }
+    } catch (error) {
+      console.log(this.mensajeError);
+      this.mensajeError = "Direccion de mail o clave no validas ";
+    }
   }
-
-  onRegister(form): void {
-    this.authService.register(form.value).subscribe(res => {
-      this.router.navigateByUrl('/auth');
-    });
-  }
+  /* private checkUserIsVerified(user: UserI) {
+  if (user && user.emailVerified) {
+      this.router.navigate(['/home']);
+    } else if (user) {
+      this.router.navigate(['/verification-email']);
+    } else {
+      this.router.navigate(['/register']);
+    }
+  }*/
 
 }
